@@ -1,10 +1,20 @@
+<!-- Filter + Search section -->
+<div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+  <app-characterfilter (houseSelected)="onHouseSelected($event)"></app-characterfilter>
+
+  <mat-form-field appearance="fill" style="width: 300px;">
+    <mat-label>Search by Name</mat-label>
+    <input matInput [(ngModel)]="searchText" placeholder="Start typing a name..." />
+  </mat-form-field>
+</div>
+
+<!-- Characters list -->
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px;">
-    <mat-card *ngFor="let char of characters" (click)="goToDetails(char)" style="cursor: pointer; width: 200px;">
-      <img mat-card-image [src]="char.image" alt="{{char.name}}" style="height: 250px; object-fit: cover;">
-      <mat-card-content>
-        <h3>{{ char.name }}</h3>
-        <p>{{ char.house || 'No House' }}</p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+  <mat-card *ngFor="let char of filteredCharacters" (click)="goToDetails(char)" style="cursor: pointer; width: 200px;">
+    <img mat-card-image [src]="char.image" alt="{{char.name}}" style="height: 250px; object-fit: cover;">
+    <mat-card-content>
+      <h3>{{ char.name }}</h3>
+      <p>{{ char.house || 'No House' }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
