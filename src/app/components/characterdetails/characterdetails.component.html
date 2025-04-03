@@ -1,0 +1,17 @@
+<div style="display: flex; justify-content: center; margin: 30px;">
+    <mat-card style="background: #1e1e1e; color: white; width: 800px; display: flex;">
+      <img mat-card-image [src]="character?.image" alt="{{ character?.name }}" style="width: 300px; object-fit: cover;">
+      <mat-card-content style="padding: 20px;">
+        <h2 style="color: red;">{{ character?.name }}</h2>
+        <p><strong>House:</strong> <span style="color: gold;">{{ character?.house }}</span></p>
+        <p><strong>Actor:</strong> <span style="color: lightblue;">{{ character?.actor }}</span></p>
+        <p><strong>Wizard:</strong> <span style="color: yellow;">{{ character?.wizard }}</span></p>
+        <p><strong>Species:</strong> <span style="color: yellow;">{{ character?.species }}</span></p>
+        <p><strong>Ancestry:</strong> {{ character?.ancestry }}</p>
+        <p><strong>Wand Wood:</strong> <span style="color: lightgreen;">{{ character?.wand?.wood }}</span></p>
+        <p><strong>Wand Core:</strong> <span style="color: khaki;">{{ character?.wand?.core }}</span></p>
+        <p><strong>Wand Length:</strong> {{ character?.wand?.length }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
