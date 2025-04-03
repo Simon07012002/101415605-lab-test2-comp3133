@@ -1,5 +1,0 @@
-services:
-  - type: web
-    name: hp-character-app
-    env: static
-    staticPublishPath: dist/101415605-lab-test2-comp3133
